@@ -1,18 +1,13 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
-void swapNumber (int *x, int *y){
-    int temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
-}
 
-void showvalues(int x, int y){
-        cout << "This is a : " << x << endl;
-        cout << "This is a : " << y << endl;
+double circleArea  (double r){
+    double result;
+    result = 3.1416 * r * r;
+    return result;
 }
-
 
 
 int main() {
@@ -21,19 +16,19 @@ int main() {
     และกำหนดให้แบ่งการทำงานเป็นโปรแกรมย่อยอย่างน้อย 1 ฟังก์ชัน
     */
 
-        int a,b;
-        cin >> a;
-        cin >> b;
-        showvalues(a, b);
+    double r;
 
-        int cmd;
-        do{
-                cin >> cmd;
-                if (cmd == 1){
-                        swapNumber(&a, &b);
-                        showvalues(a, b);
-                }
+    int cmd;
+     do{
+               cout << "Enter R :";
+               cin >> r;
+               cout << "Area :";
+               cout << setprecision(4) << fixed << circleArea(r) << endl;
+               cout << "Enter cmd :";
+               cin >> cmd;
 
         }while(cmd != 2);
+
+
     return 0;
 }
